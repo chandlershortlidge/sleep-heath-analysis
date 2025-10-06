@@ -29,10 +29,15 @@ def remove_duplicates(df):
     df = df.drop_duplicates()
     return df
 
+def standardize_bmi_category(df):
+    df['bmi_category'] = df['bmi_category'].replace('Normal Weight', 'Normal')
+    return df
+
 def clean_data(df):
     df = clean_sleep_disorder(df)
     df = lowercase_columns(df)
     df = add_underscore(df)
     df = rename_columns(df)
     df = remove_duplicates(df)
+    df = standardize_bmi_category(df)
     return df
