@@ -48,7 +48,7 @@ def rename_cvd_columns(df):
     # rename columns
     df = df.rename(columns={
     "entity": "country",
-    "death_rate100k__age_group_age_standardized__sex_both_sexes__cause_cardiovascular_diseases": "death_rate"
+    "death_rate100k__age_group_age_standardized__sex_both_sexes__cause_cardiovascular_diseases": "cvd_death_rate"
 })
     return df
 
