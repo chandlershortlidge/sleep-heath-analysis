@@ -52,6 +52,11 @@ def rename_cvd_columns(df):
 })
     return df
 
+def clean_cvd_data(df):
+    df = lowercase_columns(df)
+    df = rename_cvd_columns(df)
+    return df 
+
 # <<<< WIKIPEDIA CLEANING FUNCTIONS >>>>
 def get_table(df):
     df = df[1]
