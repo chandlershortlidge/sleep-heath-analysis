@@ -21,6 +21,7 @@ def rename_columns(df):
     "heart_rate": "rhr",
     "physical_activity_level": "activity_min_per_day",
     "person_id": "id" 
+    "death_rate100k__age_group_age_standardized__sex_both_sexes__cause_cardiovascular_diseases": "death_rate"
 })
     return df
 
@@ -40,4 +41,12 @@ def clean_data(df):
     df = rename_columns(df)
     df = remove_duplicates(df)
     df = standardize_bmi_category(df)
+    return df
+
+def rename_cvd_columns(df):
+    # rename columns
+    df = df.rename(columns={
+    "entity": "country",
+    "death_rate100k__age_group_age_standardized__sex_both_sexes__cause_cardiovascular_diseases": "death_rate"
+})
     return df
